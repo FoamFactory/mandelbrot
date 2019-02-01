@@ -1945,7 +1945,7 @@ h6 {
   max-width: 44em;
   font-feature-settings: "liga", "dlig", "kern", "onum";
   hanging-punctuation: first; }
-  .Prose > *:not(:last-child) {
+  .Prose > *:not(pre):not(:last-child) {
     margin-bottom: 0.75em; }
   .Prose ul,
   .Prose ol {
@@ -2004,18 +2004,19 @@ h6 {
       padding-left: 1em; }
     [dir="rtl"] .Prose blockquote {
       padding-right: 1em; }
-  .Prose code,
-  .Prose code pre {
+  .Prose code {
+    padding: 0.125rem;
+    background-color: rgba(83, 83, 99, 0.075); }
+  .Prose pre > code {
+    padding: 0;
+    background: 0; }
+  .Prose pre {
+    padding: 0.125rem 0.5rem;
+    margin: 1rem -0.5rem;
+    overflow: auto;
     background-color: rgba(83, 83, 99, 0.075); }
   .Prose img {
     max-width: 100%; }
-  .Prose p code,
-  .Prose li code {
-    padding: 0.125rem; }
-  .Prose code pre {
-    padding: 0.125rem 0.5rem;
-    margin: 1rem -0.5rem;
-    overflow: auto; }
   .Prose table {
     width: 100%;
     margin: 1rem -0.5rem;
