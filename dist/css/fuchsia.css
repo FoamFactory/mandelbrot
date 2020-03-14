@@ -505,9 +505,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 *::after {
   box-sizing: inherit; }
 
-::-moz-selection {
-  background-color: rgba(170, 0, 102, 0.075); }
-
 ::selection {
   background-color: rgba(170, 0, 102, 0.075); }
 
@@ -696,9 +693,8 @@ h6 {
   cursor: pointer;
   display: block;
   height: 28px;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
+  -ms-user-select: none;
+      user-select: none;
   -webkit-user-select: none; }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
@@ -721,9 +717,8 @@ h6 {
   cursor: pointer;
   display: block;
   min-height: 32px;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
+  -ms-user-select: none;
+      user-select: none;
   -webkit-user-select: none; }
 
 .select2-container .select2-selection--multiple .select2-selection__rendered {
@@ -767,9 +762,8 @@ h6 {
 
 .select2-results__option {
   padding: 6px;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
+  -ms-user-select: none;
+      user-select: none;
   -webkit-user-select: none; }
 
 .select2-results__option[aria-selected] {
@@ -1435,12 +1429,10 @@ h6 {
   min-width: 280px;
   overflow: hidden; }
   .Frame.is-resizing {
-    cursor: -webkit-grabbing;
     cursor: grabbing; }
     .Frame.is-resizing .Frame-body,
     .Frame.is-resizing .Frame-panel {
       -webkit-user-select: none;
-         -moz-user-select: none;
           -ms-user-select: none;
               user-select: none;
       pointer-events: none; }
@@ -1709,10 +1701,8 @@ h6 {
   overflow: hidden;
   background: white; }
   .Pen.is-resizing {
-    cursor: -webkit-grabbing;
     cursor: grabbing; }
     .Pen.is-resizing .Pen-handle {
-      cursor: -webkit-grabbing;
       cursor: grabbing; }
 
 .Pen-header {
@@ -1832,10 +1822,8 @@ h6 {
   .Preview.is-disabled .Preview-overlay {
     display: block; }
   .Preview.is-resizing {
-    cursor: -webkit-grabbing;
     cursor: grabbing; }
     .Preview.is-resizing * {
-      cursor: -webkit-grabbing !important;
       cursor: grabbing !important; }
   @media (min-width: 31.25em) {
     .Preview {
@@ -1945,7 +1933,7 @@ h6 {
   max-width: 44em;
   font-feature-settings: "liga", "dlig", "kern", "onum";
   hanging-punctuation: first; }
-  .Prose > *:not(:last-child) {
+  .Prose > *:not(pre):not(:last-child) {
     margin-bottom: 0.75em; }
   .Prose ul,
   .Prose ol {
@@ -2004,18 +1992,19 @@ h6 {
       padding-left: 1em; }
     [dir="rtl"] .Prose blockquote {
       padding-right: 1em; }
-  .Prose code,
-  .Prose code pre {
+  .Prose code {
+    padding: 0.125rem;
+    background-color: rgba(83, 83, 99, 0.075); }
+  .Prose pre > code {
+    padding: 0;
+    background: 0; }
+  .Prose pre {
+    padding: 0.125rem 0.5rem;
+    margin: 1rem -0.5rem;
+    overflow: auto;
     background-color: rgba(83, 83, 99, 0.075); }
   .Prose img {
     max-width: 100%; }
-  .Prose p code,
-  .Prose li code {
-    padding: 0.125rem; }
-  .Prose code pre {
-    padding: 0.125rem 0.5rem;
-    margin: 1rem -0.5rem;
-    overflow: auto; }
   .Prose table {
     width: 100%;
     margin: 1rem -0.5rem;
@@ -2147,7 +2136,6 @@ h6 {
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   -webkit-user-select: none;
-     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   color: #535363; }
